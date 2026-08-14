@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PTG Business Platform — Business Growth Ecosystem connecting businesses, service providers, and customers across multiple industries.">
+<title>PTG Business Platform | Connect • Grow • Refer • Succeed</title>
+<style>
+:root{
+  --navy:#071b35;--blue:#0b5cff;--cyan:#18c8d9;--green:#18a878;
+  --ink:#10233f;--muted:#61718a;--bg:#f5f8fc;--white:#fff;
+  --line:#e4ebf4;--shadow:0 18px 50px rgba(7,27,53,.10);--radius:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI","Noto Sans Devanagari",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(7,27,53,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.1)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:900;font-size:23px;letter-spacing:.4px}
+.logo-mark{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--cyan),var(--blue));box-shadow:0 8px 22px rgba(24,200,217,.28)}
+.nav-links{display:flex;gap:22px;color:#dbe7f6;font-size:14px;font-weight:700}
+.nav-links a:hover{color:#fff}
+.nav-btn{background:#fff;color:var(--navy);padding:10px 16px;border-radius:12px;font-weight:800;font-size:14px}
+.hero{position:relative;overflow:hidden;color:#fff;background:
+ radial-gradient(circle at 85% 18%,rgba(24,200,217,.28),transparent 30%),
+ radial-gradient(circle at 15% 80%,rgba(11,92,255,.28),transparent 32%),
+ linear-gradient(135deg,#071b35 0%,#0a2d54 52%,#083d60 100%);
+ padding:86px 0 78px}
+.hero:after{content:"";position:absolute;inset:auto -10% -130px;height:220px;background:var(--bg);border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center;position:relative;z-index:1}
+.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);padding:8px 13px;border-radius:999px;font-size:13px;font-weight:800;color:#dffcff;margin-bottom:20px}
+h1{font-size:clamp(40px,6vw,70px);line-height:1.02;letter-spacing:-2px;margin-bottom:18px}
+.gradient-text{background:linear-gradient(90deg,#fff,#8debf2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:19px;color:#d3e1f1;max-width:720px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 19px;border-radius:13px;font-weight:900;border:1px solid transparent;cursor:pointer;transition:.2s}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff;box-shadow:0 12px 28px rgba(11,92,255,.25)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-light{background:#fff;color:var(--navy)}
+.btn-outline{border-color:#cfd9e8;background:#fff;color:var(--navy)}
+.hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:26px;padding:26px;box-shadow:var(--shadow);backdrop-filter:blur(12px)}
+.hero-card h3{font-size:17px;margin-bottom:15px}
+.network{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.network span{padding:11px 10px;border-radius:12px;background:rgba(255,255,255,.08);font-size:13px;color:#e9f4ff}
+section{padding:82px 0}
+.section-head{text-align:center;max-width:800px;margin:0 auto 42px}
+.eyebrow{color:var(--blue);font-size:13px;text-transform:uppercase;letter-spacing:1.5px;font-weight:900;margin-bottom:8px}
+h2{font-size:clamp(29px,4vw,44px);line-height:1.15;letter-spacing:-1px;margin-bottom:12px}
+.section-head p{color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow)}
+.panel h3{margin-bottom:10px;font-size:22px}
+.panel p{color:var(--muted)}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:750}
+.check i{font-style:normal;background:#e8fbf5;color:#079667;border-radius:9px;padding:2px 7px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:28px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}
+.stat strong{display:block;font-size:29px;color:var(--blue)}
+.stat span{font-size:13px;color:var(--muted)}
+.categories{background:#fff}
+.search-row{display:flex;gap:12px;max-width:760px;margin:0 auto 28px}
+input,select,textarea{width:100%;border:1px solid #d7e0eb;border-radius:12px;padding:13px 14px;font:inherit;outline:none;background:#fff}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,92,255,.08)}
+.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat{border:1px solid var(--line);border-radius:18px;padding:21px;background:linear-gradient(180deg,#fff,#f8fbff);cursor:pointer;transition:.2s;position:relative;overflow:hidden}
+.cat:hover{transform:translateY(-4px);box-shadow:0 16px 35px rgba(7,27,53,.10);border-color:#c8d9ee}
+.cat .icon{font-size:30px;margin-bottom:10px}
+.cat h3{font-size:17px;margin-bottom:5px}
+.cat p{font-size:13px;color:var(--muted)}
+.cat .more{display:block;margin-top:12px;color:var(--blue);font-size:12px;font-weight:900}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:23px;text-align:center;position:relative}
+.step-num{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;margin:0 auto 13px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;font-weight:900}
+.step h3{font-size:16px;margin-bottom:6px}.step p{font-size:13px;color:var(--muted)}
+.benefits{background:linear-gradient(180deg,#f5f8fc,#edf7fb)}
+.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.benefit{background:#fff;border:1px solid var(--line);border-radius:18px;padding:23px}
+.benefit-icon{font-size:27px}.benefit h3{margin:8px 0 5px}.benefit p{font-size:13px;color:var(--muted)}
+.ecosystem{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-top:20px}
+.flow span{background:#edf5ff;border:1px solid #d8e8ff;padding:9px 12px;border-radius:11px;font-weight:800;font-size:13px}
+.arrow{color:var(--blue);font-weight:900}
+.callout{background:linear-gradient(135deg,#071b35,#0b4770);color:#fff;border-radius:24px;padding:34px;box-shadow:var(--shadow)}
+.callout p{color:#cfe0ef}.callout .btn{margin-top:20px}
+.register{background:#fff}
+.form-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px}
+.form-info{background:linear-gradient(135deg,#071b35,#0b4770);color:#fff;border-radius:24px;padding:34px}
+.form-info p{color:#cbdceb;margin-top:10px}.form-info ul{list-style:none;margin-top:22px;display:grid;gap:12px}
+.form-info li{display:flex;gap:10px}.form-card{border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:var(--shadow)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.full{grid-column:1/-1}
+.form-card button{width:100%;margin-top:18px}
+footer{background:#06172d;color:#c7d6e7;padding:45px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}
+footer h3{color:#fff;margin-bottom:10px}footer p{font-size:13px;color:#9fb3ca}footer ul{list-style:none;display:grid;gap:7px;font-size:13px}
+.copyright{border-top:1px solid rgba(255,255,255,.1);margin-top:30px;padding-top:18px;font-size:12px;color:#8298b0}
+.modal{position:fixed;inset:0;background:rgba(2,12,25,.72);display:none;align-items:center;justify-content:center;padding:20px;z-index:100}
+.modal.show{display:flex}.modal-box{background:#fff;width:min(680px,100%);max-height:88vh;overflow:auto;border-radius:24px;padding:30px;position:relative}
+.close{position:absolute;right:17px;top:15px;border:0;background:#edf2f7;width:38px;height:38px;border-radius:50%;font-size:20px;cursor:pointer}
+.modal-box h2{padding-right:45px}.modal-box .lead{color:var(--muted);margin-bottom:20px}
+.detail-list{display:grid;gap:10px;margin:18px 0}.detail-list div{background:#f6f9fd;border-radius:11px;padding:11px 13px;font-size:14px}
+.toast{position:fixed;bottom:22px;right:22px;background:#071b35;color:#fff;padding:14px 18px;border-radius:13px;box-shadow:var(--shadow);display:none;z-index:150}
+.toast.show{display:block}
+@media(max-width:950px){
+ .hero-grid,.about-grid,.ecosystem,.form-wrap{grid-template-columns:1fr}
+ .category-grid{grid-template-columns:repeat(3,1fr)}.steps{grid-template-columns:repeat(3,1fr)}
+ .stats{grid-template-columns:repeat(2,1fr)}.benefit-grid{grid-template-columns:repeat(2,1fr)}
+ .nav-links{display:none}
+}
+@media(max-width:650px){
+ section{padding:62px 0}.hero{padding:62px 0 70px}h1{letter-spacing:-1px}
+ .category-grid,.benefit-grid,.steps{grid-template-columns:1fr 1fr}
+ .checks,.form-grid{grid-template-columns:1fr}.full{grid-column:auto}
+ .footer-grid{grid-template-columns:1fr}.nav-btn{display:none}
+ .search-row{flex-direction:column}
+}
+@media(max-width:430px){.category-grid,.benefit-grid,.steps{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}}
+</style>
+
+<style>
+.lang-switch{position:relative;margin-left:4px}
+.lang-toggle{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;padding:9px 12px;border-radius:11px;font-weight:800;cursor:pointer}
+.lang-menu{display:none;position:absolute;right:0;top:46px;background:#fff;border:1px solid #dfe7f1;border-radius:12px;box-shadow:0 14px 30px rgba(7,27,53,.16);overflow:hidden;min-width:130px}
+.lang-menu.show{display:block}
+.lang-menu button{display:block;width:100%;padding:10px 13px;border:0;background:#fff;text-align:left;font:inherit;font-size:13px;cursor:pointer;color:#10233f}
+.lang-menu button:hover{background:#f1f6fb}
+@media(max-width:650px){.lang-toggle{padding:8px 10px}.lang-menu{right:0}}
+</style>
+
+
+<style id="ptg-about-restored-style">
+.ptg-benefit-list{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;margin-top:22px}
+.ptg-benefit-list div{font-weight:800;color:#0b2347;font-size:16px}
+.ptg-benefit-list div:first-letter{color:#00a879}
+.ptg-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+.ptg-stats>div{background:#fff;border:1px solid #dfe7f1;border-radius:18px;padding:26px 15px;text-align:center}
+.ptg-stats strong{display:block;font-size:38px;line-height:1;color:#185cff;margin-bottom:10px}
+.ptg-stats span{color:#61718a;font-size:14px}
+.ptg-footnote{font-size:12px;color:#71819a;margin-top:12px}
+@media(max-width:800px){.ptg-benefit-list,.ptg-stats{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.ptg-benefit-list,.ptg-stats{grid-template-columns:1fr}}
+</style>
+
+</head>
+<body>
+<div id="publicSite">
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home"><span class="logo-mark">PTG</span><span>Business Platform</span></a>
+    <nav class="nav-links">
+      <a href="#about">About</a><a href="#categories">Industries</a><a href="#how">How It Works</a><a href="#benefits">Benefits</a><a href="#register">Register</a>
+    </nav>
+    <div class="lang-switch">
+      <button class="lang-toggle" id="langToggle" type="button">🌐 English ▾</button>
+      <div class="lang-menu" id="langMenu">
+        <button type="button" onclick="setLanguage('en')">🇬🇧 English</button>
+        <button type="button" onclick="setLanguage('mr')">🇮🇳 मराठी</button>
+      </div>
+    </div>
+    <a class="nav-btn" href="#register">Join PTG</a>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <div class="badge">🚀 Business Growth Ecosystem</div>
+   <h1>Connect.<br><span class="gradient-text">Grow. Refer. Succeed.</span></h1>
+   <p>PTG Business Platform connects businesses, service providers, and customers across multiple industries on one Business Growth Ecosystem.</p>
+   <div class="cta">
+    <a class="btn btn-primary" href="#register">🤝 Register Your Business</a>
+    <a class="btn btn-light" href="#categories">🔎 Find a Business</a>
+   </div>
+  </div>
+  <div class="hero-card">
+   <h3>One Platform • Multiple Opportunities</h3>
+   <div class="network">
+    <span>🏠 Real Estate</span><span>🏨 Hospitality</span><span>🎉 Events</span><span>🏥 Healthcare</span>
+    <span>🌾 Agriculture</span><span>💻 Technology</span><span>🚚 Logistics</span><span>🛍️ Retail</span>
+    <span>⚡ Energy</span><span>💰 Finance</span><span>🚗 Automobile</span><span>🏗️ Infrastructure</span>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="about" class="ptg-about">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-en="About PTG" data-mr="PTG विषयी">About PTG</div>
+      <h2 data-en="Not Just a Business Directory — A Business Growth Ecosystem"
+          data-mr="फक्त Business Directory नाही — एक Business Growth Ecosystem">
+        Not Just a Business Directory — A Business Growth Ecosystem
+      </h2>
+      <p data-en="PTG is designed to connect businesses, service providers, and customers across industries to create new customer opportunities, referrals, digital presence, and long-term business opportunities."
+         data-mr="PTG चे उद्दिष्ट विविध उद्योगांतील व्यवसाय, सेवा पुरवठादार आणि ग्राहकांना जोडून नवीन ग्राहक, referrals, digital presence आणि दीर्घकालीन व्यावसायिक संधी निर्माण करणे आहे.">
+        PTG is designed to connect businesses, service providers, and customers across industries to create new customer opportunities, referrals, digital presence, and long-term business opportunities.
+      </p>
+    </div>
+
+    <div class="dash-cols">
+      <div class="dash-card">
+        <h3 data-en="For Businesses" data-mr="व्यवसायांसाठी">For Businesses</h3>
+        <p data-en="Build your digital business presence, reach relevant customers, and create a referral network with other member businesses."
+           data-mr="तुमची digital business presence तयार करा, योग्य ग्राहकांपर्यंत पोहोचा आणि इतर सदस्य व्यवसायांसोबत referral network तयार करा.">
+          Build your digital business presence, reach relevant customers, and create a referral network with other member businesses.
+        </p>
+        <div class="ptg-benefit-list">
+          <div>✓ <span data-en="New Customer" data-mr="नवीन ग्राहक">New Customer</span></div>
+          <div>✓ <span data-en="Referral Network" data-mr="Referral Network">Referral Network</span></div>
+          <div>✓ <span data-en="Digital Presence" data-mr="Digital Presence">Digital Presence</span></div>
+          <div>✓ <span data-en="Business Partnerships" data-mr="Business Partnerships">Business Partnerships</span></div>
+        </div>
+      </div>
+
+      <div class="dash-card">
+        <h3 data-en="For Customers" data-mr="ग्राहकांसाठी">For Customers</h3>
+        <p data-en="Discover relevant businesses and service providers for different needs through one connected business ecosystem."
+           data-mr="एकाच connected business ecosystem द्वारे विविध गरजांसाठी योग्य व्यवसाय आणि service providers शोधा.">
+          Discover relevant businesses and service providers for different needs through one connected business ecosystem.
+        </p>
+        <div class="ptg-benefit-list">
+          <div>✓ <span data-en="More Choices" data-mr="अधिक पर्याय">More Choices</span></div>
+          <div>✓ <span data-en="Business Discovery" data-mr="Business Discovery">Business Discovery</span></div>
+          <div>✓ <span data-en="Service Network" data-mr="Service Network">Service Network</span></div>
+          <div>✓ <span data-en="One Platform Approach" data-mr="एकाच Platform द्वारे सेवा">One Platform Approach</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ptg-stats">
+      <div><strong>12+</strong><span data-en="Core Industries" data-mr="मुख्य उद्योग">Core Industries</span></div>
+      <div><strong>100+</strong><span data-en="Business Types & Services*" data-mr="Business Types & Services*">Business Types & Services*</span></div>
+      <div><strong>1</strong><span data-en="Connected Ecosystem" data-mr="Connected Ecosystem">Connected Ecosystem</span></div>
+      <div><strong>∞</strong><span data-en="Growth Opportunities" data-mr="व्यावसायिक वाढीच्या संधी">Growth Opportunities</span></div>
+    </div>
+
+    <div class="ptg-footnote" data-en="*Business categories are based on the supplied PTG documents; actual platform count will depend on the final database."
+         data-mr="*Business categories उपलब्ध PTG documents वर आधारित आहेत; प्रत्यक्ष platform वरील संख्या final database वर अवलंबून असेल.">
+      *Business categories are based on the supplied PTG documents; actual platform count will depend on the final database.
+    </div>
+  </div>
+</section>
+
+<section class="categories" id="categories">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Explore Industries</div><h2>Find Your Business Category</h2><p>Click a category to explore key businesses, opportunities, and the PTG network in that industry.</p></div>
+  <div class="search-row"><input id="search" type="search" placeholder="🔎 Search industry or business type..."><select id="catFilter"><option value="">All Industries</option></select></div>
+  <div id="categoryGrid" class="category-grid"></div>
+ </div>
+</section>
+
+<section id="how">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">How PTG Works</div><h2>A Simple Journey to Business Growth</h2><p>Business discovery, connections, and referrals are at the heart of the PTG ecosystem.</p></div>
+  <div class="steps">
+   <div class="step"><div class="step-num">1</div><h3>Register</h3><p>Register your business on PTG.</p></div>
+   <div class="step"><div class="step-num">2</div><h3>Build Presence</h3><p>Show your business category and services.</p></div>
+   <div class="step"><div class="step-num">3</div><h3>Get Discovered</h3><p>Customers and other businesses can discover you.</p></div>
+   <div class="step"><div class="step-num">4</div><h3>Connect & Refer</h3><p>Create enquiries, partnerships, and referrals.</p></div>
+   <div class="step"><div class="step-num">5</div><h3>Grow</h3><p>Generate new customers and business opportunities.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="benefits" id="benefits">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">Why PTG</div>
+   <h2 data-en="Benefits of Joining PTG" data-mr="PTG मध्ये सहभागी होण्याचे फायदे">Benefits of Joining PTG</h2>
+  </div>
+  <div class="benefit-grid">
+   <div class="benefit"><div class="benefit-icon">🤝</div>
+    <h3 data-en="New Customers" data-mr="नवीन ग्राहक">New Customers</h3>
+    <p data-en="Reach new customer opportunities related to your service or business category."
+       data-mr="तुमच्या service किंवा business category शी संबंधित नवीन customer opportunities पर्यंत पोहोचा.">Reach new customer opportunities related to your service or business category.</p>
+   </div>
+   <div class="benefit"><div class="benefit-icon">🔄</div>
+    <h3 data-en="Referral Network" data-mr="Referral Network">Referral Network</h3>
+    <p data-en="Build a network for mutual referrals and collaboration between businesses."
+       data-mr="वेगवेगळ्या व्यवसायांमध्ये परस्पर referral आणि collaboration साठी network तयार करा.">Build a network for mutual referrals and collaboration between businesses.</p>
+   </div>
+   <div class="benefit"><div class="benefit-icon">🌐</div>
+    <h3 data-en="Digital Presence" data-mr="Digital Presence">Digital Presence</h3>
+    <p data-en="Strengthen your online visibility and digital identity through your PTG business presence."
+       data-mr="PTG वरील business presence द्वारे तुमची online visibility आणि digital identity मजबूत करा.">Strengthen your online visibility and digital identity through your PTG business presence.</p>
+   </div>
+   <div class="benefit"><div class="benefit-icon">📈</div>
+    <h3 data-en="Business Growth" data-mr="Business Growth">Business Growth</h3>
+    <p data-en="Support business growth through new enquiries, connections, and opportunities."
+       data-mr="नवीन enquiries, connections आणि opportunities मधून business growth ला मदत.">Support business growth through new enquiries, connections, and opportunities.</p>
+   </div>
+   <div class="benefit"><div class="benefit-icon">🔗</div>
+    <h3 data-en="Cross-Industry Connections" data-mr="Cross-Industry Connections">Cross-Industry Connections</h3>
+    <p data-en="Connect with businesses across Real Estate, Healthcare, Agriculture, Technology and other sectors."
+       data-mr="Real Estate, Healthcare, Agriculture, Technology आणि इतर sectors मधील businesses सोबत connect व्हा.">Connect with businesses across Real Estate, Healthcare, Agriculture, Technology and other sectors.</p>
+   </div>
+   <div class="benefit"><div class="benefit-icon">💼</div>
+    <h3 data-en="Long-Term Opportunities" data-mr="दीर्घकालीन संधी">Long-Term Opportunities</h3>
+    <p data-en="Build long-term partnerships and discover new business opportunities through the PTG ecosystem."
+       data-mr="PTG ecosystem द्वारे दीर्घकालीन partnerships आणि नवीन व्यावसायिक संधी निर्माण करा.">Build long-term partnerships and discover new business opportunities through the PTG ecosystem.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container ecosystem">
+  <div class="panel">
+   <div class="eyebrow">Connected Business Journey</div><h2 style="font-size:34px">One Need — Multiple Businesses — One Network</h2>
+   <p>For example, when a customer needs multiple complementary services for a project, relevant categories can be connected through the PTG business network.</p>
+   <div class="flow">
+    <span>Customer Need</span><b class="arrow">→</b><span>Business Search</span><b class="arrow">→</b><span>Service Provider</span><b class="arrow">→</b><span>Referral</span><b class="arrow">→</b><span>Growth</span>
+   </div>
+  </div>
+  <div class="callout"><div class="eyebrow" style="color:#8debf2">Join the Network</div><h2 style="font-size:34px">Bring Your Business to PTG</h2><p>Choose your business category, provide your basic details, and become part of the PTG Business Platform growth ecosystem.</p><a class="btn btn-light" href="#register">Register Your Business →</a></div>
+ </div>
+</section>
+
+<section class="register" id="register">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Business Registration</div><h2>Join the PTG Network Today</h2><p>Complete the form below to submit your initial business registration.</p></div>
+  <div class="form-wrap">
+   <div class="form-info">
+    <h2 style="font-size:31px">Build. Connect. Grow.</h2>
+    <p>Build your digital presence in an ecosystem designed to connect businesses and customers across multiple industries.</p>
+    <ul><li>✓ Business listing opportunity</li><li>✓ Industry-based discovery</li><li>✓ Referral & networking opportunity</li><li>✓ Customer connection</li><li>✓ Long-term business growth ecosystem</li></ul>
+   </div>
+   <form id="regForm" class="form-card">
+    <div class="form-grid">
+     <div><label>Business Name *</label><input required name="business" placeholder="उदा. ABC Enterprises"></div>
+     <div><label>Owner / Contact Person *</label><input required name="owner" placeholder="नाव"></div>
+     <div><label>Mobile Number *</label><input required name="mobile" inputmode="tel" placeholder="+91"></div>
+     <div><label>City *</label><input required name="city" placeholder="City"></div>
+     <div class="full"><label>Business Category *</label><select required id="formCategory" name="category"></select></div>
+     <div class="full"><label>Services / Business Description</label><textarea name="message" rows="4" placeholder="Briefly describe your business"></textarea></div>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit Business Registration →</button>
+    <p style="font-size:11px;color:#8796a9;margin-top:10px">Demo form: this standalone webpage does not send data to a server. Connect this form to your CRM, database, or WhatsApp endpoint for live submissions.</p>
+   </form>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container">
+  <div class="footer-grid">
+   <div><div class="logo"><span class="logo-mark">PTG</span><span>Business Platform</span></div><p style="margin-top:12px">Connect • Grow • Refer • Succeed</p><p style="margin-top:8px">Business Growth Ecosystem connecting businesses, service providers, and customers across multiple industries.</p></div>
+   <div><h3>Quick Links</h3><ul><li><a href="#about">About PTG</a></li><li><a href="#categories">Industries</a></li><li><a href="#how">How It Works</a></li><li><a href="#register">Register Business</a></li></ul></div>
+   <div><h3>Core Industries</h3><ul><li>Real Estate • Automobile • Events</li><li>Healthcare • Agriculture • Education</li><li>Technology • Finance • Energy</li><li>Logistics • Retail • Infrastructure</li></ul></div>
+  </div>
+  <div class="copyright">© 2026 PTG Business Platform. Website concept and content structured from the supplied PTG Business documents.</div>
+ </div>
+</footer>
+</div>
+
+<div id="modal" class="modal"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+<div id="toast" class="toast">Registration details captured in this demo.</div>
+
+
+<script>
+const uiTranslations = {
+  mr: {
+    "About":"माहिती",
+    "Industries":"उद्योग",
+    "How It Works":"कसे कार्य करते",
+    "Benefits":"फायदे",
+    "Register":"नोंदणी",
+    "Join PTG":"PTG मध्ये सहभागी व्हा",
+    "Business Growth Ecosystem":"Business Growth Ecosystem",
+    "Connect.<br><span class=\"gradient-text\">Grow. Refer. Succeed.</span>":"जोडा.<br><span class=\"gradient-text\">वाढवा. Refer करा. यशस्वी व्हा.</span>",
+    "PTG Business Platform connects businesses, service providers, and customers across multiple industries on one Business Growth Ecosystem.":"PTG Business Platform विविध उद्योगांतील व्यवसाय, सेवा पुरवठादार आणि ग्राहकांना एका Business Growth Ecosystem वर जोडते.",
+    "One Platform • Multiple Opportunities":"एक प्लॅटफॉर्म • अनेक संधी",
+    "About PTG":"PTG विषयी",
+    "Not Just a Business Directory — A Business Growth Ecosystem":"फक्त Business Directory नाही — एक Business Growth Ecosystem",
+    "PTG is designed to connect businesses, service providers, and customers across industries to create new customer opportunities, referrals, digital presence, and long-term business opportunities.":"PTG चे उद्दिष्ट विविध उद्योगांतील व्यवसाय, सेवा पुरवठादार आणि ग्राहकांना जोडून नवीन ग्राहक, referrals, digital presence आणि दीर्घकालीन व्यावसायिक संधी निर्माण करणे आहे.",
+    "For Businesses":"व्यवसायांसाठी",
+    "Build your digital business presence, reach relevant customers, and create a referral network with other member businesses.":"तुमच्या व्यवसायाची digital presence तयार करा, योग्य ग्राहकांपर्यंत पोहोचा आणि इतर सदस्य व्यवसायांसोबत referral network तयार करा.",
+    "<span data-benefit-en="New Customers" data-benefit-mr="नवीन ग्राहक">New Customers</span>":"नवीन ग्राहक",
+    "<span data-benefit-en="Referral Network" data-benefit-mr="Referral Network">Referral Network</span>":"<span data-benefit-en="Referral Network" data-benefit-mr="Referral Network">Referral Network</span>",
+    "<span data-benefit-en="Digital Presence" data-benefit-mr="Digital Presence">Digital Presence</span>":"<span data-benefit-en="Digital Presence" data-benefit-mr="Digital Presence">Digital Presence</span>",
+    "<span data-benefit-en="Business Partnerships" data-benefit-mr="Business Partnerships">Business Partnerships</span>":"<span data-benefit-en="Business Partnerships" data-benefit-mr="Business Partnerships">Business Partnerships</span>",
+    "For Customers":"ग्राहकांसाठी",
+    "Discover relevant businesses and service providers for different needs through one connected business ecosystem.":"विविध गरजांसाठी संबंधित व्यवसाय आणि सेवा पुरवठादार एका connected business ecosystem मधून शोधा.",
+    "<span data-benefit-en="More Choices" data-benefit-mr="अधिक पर्याय">More Choices</span>":"अधिक पर्याय",
+    "<span data-benefit-en="Business Discovery" data-benefit-mr="Business Discovery">Business Discovery</span>":"<span data-benefit-en="Business Discovery" data-benefit-mr="Business Discovery">Business Discovery</span>",
+    "<span data-benefit-en="Service Network" data-benefit-mr="Service Network">Service Network</span>":"<span data-benefit-en="Service Network" data-benefit-mr="Service Network">Service Network</span>",
+    "One Platform Approach":"One Platform Approach",
+    "Find Your Business Category":"तुमची Business Category शोधा",
+    "Click a category to explore key businesses, opportunities, and the PTG network in that industry.":"Category वर क्लिक करून त्या क्षेत्रातील प्रमुख व्यवसाय, संधी आणि PTG network पाहा.",
+    "Explore Industries":"उद्योग शोधा",
+    "Search industry or business type...":"Industry किंवा business type शोधा...",
+    "All Industries":"सर्व उद्योग",
+    "A Simple Journey to Business Growth":"Business Growth चा सोपा प्रवास",
+    "Business discovery, connections, and referrals are at the heart of the PTG ecosystem.":"Business discovery, connections आणि referrals हे PTG ecosystem चे केंद्र आहेत.",
+    "Benefits of Joining PTG":"PTG मध्ये सहभागी होण्याचे फायदे",
+    "Benefits":"फायदे",
+    "One Need — Multiple Businesses — One Network":"एक गरज — अनेक व्यवसाय — एक network",
+    "For example, when a customer needs multiple complementary services for a project, relevant categories can be connected through the PTG business network.":"उदाहरणार्थ, एखाद्या project साठी ग्राहकाला अनेक complementary services लागल्यास PTG business network मधील संबंधित categories जोडल्या जाऊ शकतात.",
+    "Bring Your Business to PTG":"तुमचा व्यवसाय PTG वर आणा",
+    "Choose your business category, provide your basic details, and become part of the PTG Business Platform growth ecosystem.":"तुमची business category निवडा, basic details द्या आणि PTG Business Platform च्या growth ecosystem चा भाग बना.",
+    "Join the PTG Network Today":"आजच PTG Network मध्ये सहभागी व्हा",
+    "Complete the form below to submit your initial business registration.":"खालील form भरून तुमची प्राथमिक business registration करा.",
+    "Business Registration":"Business Registration",
+    "Build. Connect. Grow.":"Build. Connect. Grow.",
+    "Build your digital presence in an ecosystem designed to connect businesses and customers across multiple industries.":"विविध उद्योगांतील businesses आणि customers यांना जोडणाऱ्या ecosystem मध्ये तुमची digital presence तयार करा.",
+    "Business listing opportunity":"Business listing opportunity",
+    "Industry-based discovery":"Industry-based discovery",
+    "Referral & networking opportunity":"Referral & networking opportunity",
+    "Customer connection":"Customer connection",
+    "Long-term business growth ecosystem":"Long-term business growth ecosystem",
+    "Business Name *":"Business Name *",
+    "Owner / Contact Person *":"Owner / Contact Person *",
+    "Mobile Number *":"Mobile Number *",
+    "City *":"City *",
+    "Business Category *":"Business Category *",
+    "Briefly describe your business":"तुमच्या व्यवसायाबद्दल थोडक्यात माहिती",
+    "Submit Business Registration →":"Business Registration Submit करा →",
+    "Quick Links":"Quick Links",
+    "Core Industries":"मुख्य उद्योग",
+    "Register Your Business":"तुमचा Business Register करा",
+    "Find a Business":"Business शोधा",
+    "Customer Need":"ग्राहकाची गरज",
+    "Business Search":"Business Search",
+    "Service Provider":"Service Provider",
+    "Referral":"Referral",
+    "Growth":"Growth",
+    "Register":"नोंदणी",
+    "Build Presence":"Presence तयार करा",
+    "Get Discovered":"तुमचा Business शोधता येईल",
+    "Connect & Refer":"Connect & Refer",
+    "Grow":"वाढवा",
+    "Register your business on PTG.":"तुमचा व्यवसाय PTG वर Register करा.",
+    "Show your business category and services.":"तुमची business category आणि services दाखवा.",
+    "Customers and other businesses can discover you.":"Customers आणि इतर businesses तुम्हाला शोधू शकतील.",
+    "Create enquiries, partnerships, and referrals.":"Enquiries, partnerships आणि referrals तयार करा.",
+    "Generate new customers and business opportunities.":"नवीन customers आणि business opportunities मिळवा.",
+    "No matching industry found.":"जुळणारा industry सापडला नाही.",
+    "Registration details captured in this demo.":"Demo मध्ये registration details capture झाले आहेत."
+  }
+};
+
+const originalText = new WeakMap();
+
+function saveOriginalText(root=document.body){
+  root.querySelectorAll("*").forEach(el=>{
+    if(el.children.length===0 && !originalText.has(el)) originalText.set(el, el.textContent);
+  });
+}
+saveOriginalText();
+
+function translateStatic(lang){
+  if(lang==="en"){
+    document.querySelectorAll("*").forEach(el=>{
+      if(el.children.length===0 && originalText.has(el)) el.textContent=originalText.get(el);
+    });
+    document.documentElement.lang="en";
+    document.getElementById("langToggle").textContent="🌐 English ▾";
+  } else {
+    document.querySelectorAll("*").forEach(el=>{
+      if(el.children.length===0 && originalText.has(el)){
+        const t=originalText.get(el).trim();
+        if(uiTranslations.mr[t]) el.textContent=uiTranslations.mr[t];
+      }
+    });
+    document.documentElement.lang="mr";
+    document.getElementById("langToggle").textContent="🌐 मराठी ▾";
+  }
+  localStorage.setItem("ptgLanguage",lang);
+  document.getElementById("langMenu").classList.remove("show");
+}
+
+function setLanguage(lang){
+  translateStatic(lang);
+  // Keep dynamically generated category cards/forms in sync through the
+  // existing category rendering logic and labels.
+  if(typeof render==="function") render();
+}
+
+document.getElementById("langToggle").addEventListener("click",()=>{
+  document.getElementById("langMenu").classList.toggle("show");
+});
+document.addEventListener("click",e=>{
+  const box=document.querySelector(".lang-switch");
+  if(box && !box.contains(e.target)) document.getElementById("langMenu").classList.remove("show");
+});
+window.addEventListener("DOMContentLoaded",()=>{
+  const saved=localStorage.getItem("ptgLanguage") || "en";
+  translateStatic(saved);
+});
+</script>
+
+<script>
+const industries = [{"id":"realestate","icon":"🏠","name":"Real Estate","mr":"रिअल इस्टेट","desc":"Residential, commercial, and industrial property, construction, and investment.","mrdesc":"निवासी, व्यावसायिक आणि औद्योगिक मालमत्ता, बांधकाम आणि गुंतवणूक.","business":["Residential Projects","Commercial Projects","Industrial Property","Plotting","Construction","Interior Services"],"opp":["Property enquiries","Project referrals","Construction partnerships","Investment opportunities"],"benefit":"Relevant customers, professional networking, referrals, and more business."},{"id":"automobile","icon":"🚗","name":"Automobile","mr":"ऑटोमोबाईल","desc":"Vehicles, repairs, spare parts, and related services.","mrdesc":"वाहने, दुरुस्ती, spare parts आणि संबंधित services.","business":["New & Used Vehicles","Vehicle Service","Repairs","Spare Parts","Accessories","Car Care"],"opp":["Vehicle enquiries","Service referrals","Corporate tie-ups","Customer connections"],"benefit":"New customers, referrals, and stronger local business visibility."},{"id":"events","icon":"🎉","name":"Events","mr":"इव्हेंट्स","desc":"Planning and management of social, cultural, wedding, and corporate events.","mrdesc":"सामाजिक, सांस्कृतिक, लग्न आणि corporate events चे planning व management.","business":["Event Planners","Wedding Services","Decorators","Catering","Photography","Sound & Lighting"],"opp":["Event enquiries","Vendor referrals","Corporate events","Cross-service partnerships"],"benefit":"Connect multiple event services and generate qualified enquiries."},{"id":"adventure","icon":"🏔️","name":"Adventure & Tourism","mr":"साहसी पर्यटन","desc":"Adventure tourism, trekking, travel experiences, and outdoor recreation.","mrdesc":"Adventure tourism, trekking, travel experiences आणि outdoor recreation.","business":["Travel Agencies","Trekking Operators","Adventure Activities","Tour Packages","Guides","Outdoor Recreation"],"opp":["Tourist enquiries","Group bookings","Travel partnerships","Experience referrals"],"benefit":"A network connecting travellers, organisers, and service providers."},{"id":"healthcare","icon":"🏥","name":"Healthcare","mr":"आरोग्य सेवा","desc":"Healthcare, treatment, diagnostics, rehabilitation, and wellness services.","mrdesc":"आरोग्य, उपचार, निदान, rehabilitation आणि wellness services.","business":["Hospitals","Clinics","Diagnostics","Pharmacies","Wellness","Rehabilitation"],"opp":["Patient enquiries","Healthcare referrals","Corporate wellness","Service partnerships"],"benefit":"Trusted healthcare connections and more relevant patient opportunities."},{"id":"logistics","icon":"🚚","name":"Logistics","mr":"लॉजिस्टिक्स","desc":"Transportation, storage, supply-chain, and distribution services.","mrdesc":"मालाची वाहतूक, साठवण, supply-chain आणि वितरण सेवा.","business":["Transporters","Warehousing","Packers & Movers","Courier","Fleet Services","Distribution"],"opp":["Transport requirements","Business contracts","Logistics referrals","Supply-chain partnerships"],"benefit":"Connect businesses with reliable transportation and logistics partners."},{"id":"agriculture","icon":"🌾","name":"Agriculture","mr":"कृषी","desc":"Farming, animal husbandry, agricultural services, and food production.","mrdesc":"शेती, पशुपालन, कृषी सेवा आणि अन्न उत्पादन.","business":["Farmers","Agri Inputs","Equipment","Dairy","Animal Husbandry","Food Processing"],"opp":["Agri product enquiries","Farmer connections","Institutional buyers","Supply partnerships"],"benefit":"A network connecting farmers, agri-entrepreneurs, and service providers."},{"id":"education","icon":"🎓","name":"Education","mr":"शिक्षण","desc":"Knowledge, skill development, coaching, and professional training.","mrdesc":"ज्ञान, skill development, coaching आणि professional training.","business":["Schools","Colleges","Coaching","Skill Training","Professional Courses","EdTech"],"opp":["Student enquiries","Institutional partnerships","Training referrals","Corporate learning"],"benefit":"Connect students, institutions, trainers, and education service providers."},{"id":"technology","icon":"💻","name":"Technology","mr":"तंत्रज्ञान","desc":"Digital services, software, IT solutions, and modern technology.","mrdesc":"Digital services, software, IT solutions आणि आधुनिक technology.","business":["Software","IT Services","Web Development","Digital Marketing","Cybersecurity","Cloud Services"],"opp":["Technology enquiries","Business automation","Digital partnerships","IT referrals"],"benefit":"Digital business growth, stronger visibility, and new customer opportunities."},{"id":"financial","icon":"💰","name":"Financial Services","mr":"वित्तीय सेवा","desc":"Banking, loans, insurance, investment, accounting, and financial services.","mrdesc":"Banking, loans, insurance, investment, accounting आणि financial services.","business":["Loans","Insurance","Investment","Accounting","Tax Services","Financial Advisory"],"opp":["Financial enquiries","Business finance","Insurance referrals","Investment connections"],"benefit":"Connect customers and businesses with relevant financial partners."},{"id":"energy","icon":"⚡","name":"Energy","mr":"ऊर्जा","desc":"Energy generation, distribution, solar, electrical, and renewable energy services.","mrdesc":"ऊर्जानिर्मिती, वितरण, solar, electrical आणि renewable energy services.","business":["Solar","Electrical Services","Renewable Energy","Energy Equipment","Power Solutions","Maintenance"],"opp":["Solar enquiries","Commercial projects","Energy partnerships","Renewable referrals"],"benefit":"A network connecting customers with modern and renewable energy businesses."},{"id":"retail","icon":"🛍️","name":"Retail","mr":"किरकोळ व्यापार","desc":"Businesses that provide products and services directly to consumers.","mrdesc":"ग्राहकांना थेट products आणि services उपलब्ध करून देणारा sector.","business":["Retail Stores","Supermarkets","Fashion","Electronics","Home Products","Local Shops"],"opp":["Customer enquiries","Local referrals","Supplier connections","Cross-selling"],"benefit":"More customers, digital identity, referrals, and business growth."}];
+
+const grid=document.getElementById("categoryGrid"), search=document.getElementById("search"), filter=document.getElementById("catFilter"), formCat=document.getElementById("formCategory");
+industries.forEach(x=>{
+ const o=document.createElement("option");o.value=x.id;o.textContent=x.mr+" / "+x.name;filter.appendChild(o);
+ const f=document.createElement("option");f.value=x.id;f.textContent=x.mr+" / "+x.name;formCat.appendChild(f);
+});
+function refreshCategoryLabels(){
+ const isMr=document.documentElement.lang==="mr";
+ filter.options[0].textContent=isMr?"सर्व उद्योग":"All Industries";
+ formCat.options[0].textContent=isMr?"Business Category निवडा":"Select Business Category";
+ for(let i=1;i<filter.options.length;i++){
+   const x=industries.find(v=>v.id===filter.options[i].value);
+   if(x) filter.options[i].textContent=isMr?x.mr+" / "+x.name:x.name+" / "+x.mr;
+ }
+ for(let i=1;i<formCat.options.length;i++){
+   const x=industries.find(v=>v.id===formCat.options[i].value);
+   if(x) formCat.options[i].textContent=isMr?x.mr+" / "+x.name:x.name+" / "+x.mr;
+ }
+}
+const oldSetLanguage=setLanguage;
+setLanguage=function(lang){ oldSetLanguage(lang); refreshCategoryLabels(); render(); };
+refreshCategoryLabels();
+function render(){
+ const q=(search?.value||"").toLowerCase().trim(), f=filter?.value||"";
+ const list=industries.filter(x=>{
+   const hay=(x.name+" "+x.mr+" "+x.desc+" "+x.mrdesc+" "+x.business.join(" ")+" "+x.opp.join(" ")).toLowerCase();
+   return (!q||hay.includes(q))&&(!f||x.id===f);
+ });
+ const isMr=document.documentElement.lang==="mr";
+ if(grid){
+   grid.innerHTML=list.length?list.map(x=>`<article class="cat" onclick="openModal('${x.id}')">
+    <div class="icon">${x.icon}</div>
+    <h3>${isMr?x.mr:x.name}</h3>
+    <p>${isMr?x.mrdesc:x.desc}</p>
+    <span class="more">${isMr?"व्यवसाय categories पाहा →":"View business categories →"}</span>
+   </article>`).join(""):`<div class="panel" style="grid-column:1/-1;text-align:center">${isMr?"जुळणारा industry सापडला नाही.":"No matching industry found."}</div>`;
+ }
+}
+search.addEventListener("input",render);filter.addEventListener("change",render);render();
+
+function openModal(id){
+ const x=industries.find(i=>i.id===id); if(!x)return;
+ const isMr=document.documentElement.lang==="mr";
+ document.getElementById("modalContent").innerHTML=`
+  <div class="eyebrow">${isMr?x.mr:x.name}</div>
+  <h2>${x.icon} ${isMr?x.mr:x.name}</h2>
+  <p class="lead">${isMr?x.mrdesc:x.desc}</p>
+  <h3>${isMr?"मुख्य व्यवसाय":"Key Business Types"}</h3>
+  <div class="detail-list">${x.business.map(v=>`<div>✓ ${v}</div>`).join("")}</div>
+  <h3>${isMr?"व्यवसायाच्या संधी":"Business Opportunities"}</h3>
+  <div class="detail-list">${x.opp.map(v=>`<div>↗ ${v}</div>`).join("")}</div>
+  <h3>${isMr?"PTG फायदा":"PTG Benefit"}</h3>
+  <div class="detail-list"><div>🤝 ${x.benefit}</div></div>
+  <a class="btn btn-primary" href="#register" onclick="closeModal()">${isMr?"या category मध्ये Register करा →":"Register in this category →"}</a>`;
+ document.getElementById("modal").classList.add("show");
+}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+document.getElementById("regForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ document.getElementById("toast").classList.add("show");
+ e.target.reset();
+ setTimeout(()=>document.getElementById("toast").classList.remove("show"),3500);
+});
+</script>
+
+<script>
+/* ================= PTG 4-ROLE PLATFORM PROTOTYPE ================= */
+const PTG = {
+  usersKey:"ptg_users_v1", businessesKey:"ptg_businesses_v1",
+  clientsKey:"ptg_clients_v1", leadsKey:"ptg_leads_v1",
+  sessionKey:"ptg_session_v1"
+};
+const seed = {
+ users:[
+  {id:"admin1",role:"admin",name:"PTG Administrator",email:"admin@ptg.demo",password:"admin123"},
+  {id:"coord1",role:"coordinator",name:"PTG Coordinator",email:"coordinator@ptg.demo",password:"coord123"},
+  {id:"biz1",role:"business",name:"Demo Business",email:"business@ptg.demo",password:"biz123",category:"realestate",service:"Interior Design & Project Services"},
+  {id:"client1",role:"client",name:"Demo Client",email:"client@ptg.demo",password:"client123",city:"Pune"}
+ ],
+ businesses:[
+  {id:"biz1",ownerId:"biz1",name:"Demo Business",category:"realestate",service:"Interior Design & Project Services",city:"Pune",status:"approved"}
+ ],
+ clients:[{id:"client1",userId:"client1",name:"Demo Client",city:"Pune"}],
+ leads:[]
+};
+function dbGet(key, fallback){const v=localStorage.getItem(key); return v?JSON.parse(v):fallback}
+function dbSet(key,v){localStorage.setItem(key,JSON.stringify(v))}
+function initDB(){
+ if(!localStorage.getItem(PTG.usersKey)) dbSet(PTG.usersKey,seed.users);
+ if(!localStorage.getItem(PTG.businessesKey)) dbSet(PTG.businessesKey,seed.businesses);
+ if(!localStorage.getItem(PTG.clientsKey)) dbSet(PTG.clientsKey,seed.clients);
+ if(!localStorage.getItem(PTG.leadsKey)) dbSet(PTG.leadsKey,seed.leads);
+}
+initDB();
+
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+function roleName(r){return ({admin:"Admin",business:"Business",coordinator:"Coordinator",client:"End Client"})[r]||r}
+function current(){const s=localStorage.getItem(PTG.sessionKey); return s?JSON.parse(s):null}
+function login(email,password,role){
+ const u=dbGet(PTG.usersKey,[]).find(x=>x.email.toLowerCase()===email.toLowerCase()&&x.password===password&&x.role===role);
+ if(!u) return false;
+ localStorage.setItem(PTG.sessionKey,JSON.stringify({id:u.id,role:u.role,name:u.name,email:u.email}));
+ return true;
+}
+function logout(){localStorage.removeItem(PTG.sessionKey);showPortal()}
+function showPortal(){
+ document.getElementById("portal").classList.add("show");
+ document.getElementById("publicSite").style.display="none";
+ renderPortalLogin();
+}
+function closePortal(){document.getElementById("portal").classList.remove("show");document.getElementById("publicSite").style.display="block"}
+function renderPortalLogin(){
+ const s=current(); if(s){renderDashboard(s);return}
+ document.getElementById("portalBody").innerHTML=`
+ <div class="portal-head"><div><div class="eyebrow">PTG Secure Portal</div><h2>Login to PTG</h2><p>Choose your account type and access the relevant dashboard.</p></div><button class="portal-close" onclick="closePortal()">×</button></div>
+ <div class="role-grid">
+  ${["admin","business","coordinator","client"].map(r=>`<button class="role-card" onclick="showLogin('${r}')"><span>${({admin:"👨‍💼",business:"🏢",coordinator:"🤝",client:"👤"})[r]}</span><strong>${roleName(r)}</strong><small>${({admin:"Full platform control",business:"Manage business & leads",coordinator:"Connect clients & businesses",client:"Find & use services"})[r]}</small></button>`).join("")}
+ </div>`;
+}
+function showLogin(role){
+ document.getElementById("portalBody").innerHTML=`
+ <div class="portal-head"><div><div class="eyebrow">${roleName(role)} Account</div><h2>${roleName(role)} Login</h2><p>Demo login is available for testing.</p></div><button class="portal-close" onclick="renderPortalLogin()">←</button></div>
+ <form class="portal-form" onsubmit="event.preventDefault();if(login(this.email.value,this.password.value,'${role}'))renderDashboard(current());else alert('Invalid demo credentials.')">
+  <input name="email" type="email" placeholder="Email" required>
+  <input name="password" type="password" placeholder="Password" required>
+  <button class="btn btn-primary">Login as ${roleName(role)} →</button>
+  <div class="demo-box"><b>Demo credentials</b><br>${({admin:"admin@ptg.demo / admin123",business:"business@ptg.demo / biz123",coordinator:"coordinator@ptg.demo / coord123",client:"client@ptg.demo / client123"})[role]}</div>
+ </form>`;
+}
+function renderDashboard(s){
+ const data={
+  admin:adminDash,business:businessDash,coordinator:coordinatorDash,client:clientDash
+ }[s.role];
+ document.getElementById("portalBody").innerHTML=data(s);
+}
+function shell(title,subtitle,body){
+ return `<div class="portal-head"><div><div class="eyebrow">PTG ${roleName(current().role)} Dashboard</div><h2>${title}</h2><p>${subtitle}</p></div><div class="portal-actions"><span class="user-chip">👤 ${esc(current().name)}</span><button class="btn btn-outline" onclick="logout()">Logout</button></div></div>${body}`;
+}
+function adminDash(){
+ const bs=dbGet(PTG.businessesKey,[]),cs=dbGet(PTG.clientsKey,[]),ls=dbGet(PTG.leadsKey,[]),us=dbGet(PTG.usersKey,[]);
+ return shell("Platform Overview","Control registrations, users, businesses, leads and service activity.",`
+ <div class="dash-grid">
+  ${statCard("👥","Total Users",us.length)}${statCard("🏢","Businesses",bs.length)}${statCard("👤","Clients",cs.length)}${statCard("📩","Leads",ls.length)}
+ </div>
+ <div class="dash-cols">
+  <div class="dash-card"><h3>Recent Businesses</h3>${bs.map(b=>`<div class="list-row"><span>🏢 <b>${esc(b.name)}</b><small>${esc(b.city)} • ${esc(b.service)}</small></span><span class="status">${esc(b.status)}</span></div>`).join("")}</div>
+  <div class="dash-card"><h3>Lead Pipeline</h3>${pipeline(ls)}</div>
+ </div>
+ <div class="dash-card"><h3>Admin Controls</h3><div class="mini-actions"><button onclick="alert('Category management is ready for backend connection.')">Manage Categories</button><button onclick="alert('User approval workflow can be connected to a database.')">User Approvals</button><button onclick="alert('Reports module placeholder')">Reports</button><button onclick="alert('Support / dispute module placeholder')">Support & Disputes</button></div></div>`);
+}
+function businessDash(){
+ const me=current(), bs=dbGet(PTG.businessesKey,[]), b=bs.find(x=>x.ownerId===me.id)||{}, ls=dbGet(PTG.leadsKey,[]).filter(x=>x.businessId===me.id);
+ return shell("Business Dashboard","Manage your business profile, referrals, enquiries and service pipeline.",`
+ <div class="dash-grid">${statCard("📩","New Leads",ls.filter(x=>x.status==="New").length)}${statCard("🔗","All Leads",ls.length)}${statCard("✅","Completed",ls.filter(x=>x.status==="Completed").length)}${statCard("⭐","Rating","—")}</div>
+ <div class="dash-cols">
+  <div class="dash-card"><h3>Business Profile</h3><div class="profile-box"><b>${esc(b.name||me.name)}</b><span>${esc(b.service||"Add services")}</span><span>${esc(b.city||"City not set")}</span><span>${esc(b.category||"Category not set")}</span></div><button class="btn btn-primary" onclick="editBusiness()">Edit Business Profile</button></div>
+  <div class="dash-card"><h3>Lead Enquiries</h3>${ls.length?ls.map(leadRow).join(""):"<p class='muted'>No leads yet.</p>"}</div>
+ </div>
+ <div class="dash-card"><h3>Business Workflow</h3><div class="flow2"><b>Lead Received</b> → <b>Accept</b> → <b>Contact Client</b> → <b>Service</b> → <b>Complete</b> → <b>Review</b></div></div>`);
+}
+function coordinatorDash(){
+ const ls=dbGet(PTG.leadsKey,[]),bs=dbGet(PTG.businessesKey,[]),cs=dbGet(PTG.clientsKey,[]);
+ return shell("Coordinator Dashboard","The bridge between the client who needs a service and the business that provides it.",`
+ <div class="dash-grid">${statCard("📋","Client Requirements",ls.length)}${statCard("🔗","Matched",ls.filter(x=>x.businessId).length)}${statCard("⏳","Open",ls.filter(x=>!["Completed","Cancelled"].includes(x.status)).length)}${statCard("✅","Completed",ls.filter(x=>x.status==="Completed").length)}</div>
+ <div class="dash-cols">
+  <div class="dash-card"><h3>Create Client Requirement</h3>
+   <form class="compact-form" onsubmit="event.preventDefault();createLead(this)">
+    <input name="clientName" placeholder="Client name" required><input name="city" placeholder="City" required>
+    <select name="category" required>${industries.map(x=>`<option value="${x.id}">${x.name}</option>`).join("")}</select>
+    <input name="service" placeholder="Required service" required><textarea name="notes" placeholder="Requirement / budget / details"></textarea>
+    <button class="btn btn-primary">Create Requirement →</button>
+   </form>
+  </div>
+  <div class="dash-card"><h3>Match Business</h3>${ls.length?ls.map(x=>matchLeadBox(x,bs)).join(""):"<p class='muted'>No client requirements yet.</p>"}</div>
+ </div>
+ <div class="dash-card"><h3>Lead Pipeline</h3>${pipeline(ls)}</div>`);
+}
+function clientDash(){
+ const me=current(), clients=dbGet(PTG.clientsKey,[]), c=clients.find(x=>x.userId===me.id)||{}, ls=dbGet(PTG.leadsKey,[]).filter(x=>x.clientId===me.id);
+ return shell("End Client Dashboard","Find a service, submit a requirement, and track your service journey.",`
+ <div class="dash-grid">${statCard("🔎","My Requirements",ls.length)}${statCard("🤝","Matched",ls.filter(x=>x.businessId).length)}${statCard("🔄","In Progress",ls.filter(x=>x.status==="Accepted"||x.status==="Service Started").length)}${statCard("✅","Completed",ls.filter(x=>x.status==="Completed").length)}</div>
+ <div class="dash-card"><h3>Find a Service</h3><form class="compact-form" onsubmit="event.preventDefault();clientRequirement(this)">
+  <select name="category" required>${industries.map(x=>`<option value="${x.id}">${x.name}</option>`).join("")}</select>
+  <input name="service" placeholder="What service do you need?" required><input name="city" value="${esc(c.city||"")}" placeholder="City" required>
+  <textarea name="notes" placeholder="Requirement, budget, preferred date..."></textarea>
+  <button class="btn btn-primary">Submit Requirement →</button></form></div>
+ <div class="dash-card"><h3>My Service Requests</h3>${ls.length?ls.map(leadRow).join(""):"<p class='muted'>No service requests yet.</p>"}</div>`);
+}
+function statCard(icon,label,value){return `<div class="stat2"><span>${icon}</span><strong>${esc(value)}</strong><small>${label}</small></div>`}
+function pipeline(ls){return ls.length?`<div class="pipeline">${["New","Matched","Accepted","Service Started","Completed"].map(s=>`<div><b>${s}</b><strong>${ls.filter(x=>x.status===s).length}</strong></div>`).join("")}</div>`:"<p class='muted'>No lead activity yet.</p>"}
+function leadRow(x){
+ const bs=dbGet(PTG.businessesKey,[]), b=bs.find(v=>v.id===x.businessId);
+ return `<div class="list-row"><span>📩 <b>${esc(x.service)}</b><small>${esc(x.clientName)} • ${esc(x.city)} • ${esc(b?.name||"Awaiting business match")}</small></span><span class="status">${esc(x.status)}</span></div>`;
+}
+function matchLeadBox(x,bs){
+ const matched=bs.filter(b=>b.category===x.category || b.city.toLowerCase()===x.city.toLowerCase());
+ return `<div class="match-box"><div><b>${esc(x.service)}</b><small>${esc(x.clientName)} • ${esc(x.city)}</small></div>
+ <select onchange="assignBusiness('${x.id}',this.value)"><option value="">Select business...</option>${matched.map(b=>`<option value="${b.id}" ${x.businessId===b.id?"selected":""}>${esc(b.name)} — ${esc(b.service)}</option>`).join("")}</select></div>`;
+}
+function createLead(form){
+ const s=current(), ls=dbGet(PTG.leadsKey,[]);
+ ls.push({id:"lead_"+Date.now(),clientId:"external_"+Date.now(),clientName:form.clientName.value,city:form.city.value,category:form.category.value,service:form.service.value,notes:form.notes.value,businessId:"",coordinatorId:s.id,status:"New",created:new Date().toISOString()});
+ dbSet(PTG.leadsKey,ls);renderDashboard(s);alert("Client requirement created.");
+}
+function clientRequirement(form){
+ const s=current(), ls=dbGet(PTG.leadsKey,[]);
+ ls.push({id:"lead_"+Date.now(),clientId:s.id,clientName:s.name,city:form.city.value,category:form.category.value,service:form.service.value,notes:form.notes.value,businessId:"",coordinatorId:"",status:"New",created:new Date().toISOString()});
+ dbSet(PTG.leadsKey,ls);renderDashboard(s);alert("Your requirement has been submitted to PTG.");
+}
+function assignBusiness(leadId,bizId){
+ const ls=dbGet(PTG.leadsKey,[]),i=ls.findIndex(x=>x.id===leadId);
+ if(i<0)return;
+ ls[i].businessId=bizId;ls[i].status=bizId?"Matched":"New";dbSet(PTG.leadsKey,ls);
+ renderDashboard(current());
+}
+function editBusiness(){
+ const s=current(),bs=dbGet(PTG.businessesKey,[]),b=bs.find(x=>x.ownerId===s.id)||{};
+ const name=prompt("Business name:",b.name||""); if(name===null)return;
+ const service=prompt("Main service:",b.service||""); if(service===null)return;
+ const city=prompt("City:",b.city||""); if(city===null)return;
+ const i=bs.findIndex(x=>x.ownerId===s.id);
+ if(i>=0){bs[i]={...bs[i],name,service,city};dbSet(PTG.businessesKey,bs)}
+ renderDashboard(s);
+}
+function openPortalFromMenu(){showPortal()}
+
+/* Add portal styling. */
+const portalStyle=document.createElement("style");
+portalStyle.textContent=`
+#portal{position:fixed;inset:0;background:rgba(2,12,25,.78);z-index:300;display:none;align-items:center;justify-content:center;padding:18px}
+#portal.show{display:flex}.portal-window{width:min(1100px,100%);max-height:92vh;overflow:auto;background:#f5f8fc;border-radius:26px;box-shadow:0 30px 90px rgba(0,0,0,.28);padding:28px}
+.portal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:25px}.portal-head h2{margin-bottom:5px}.portal-head p{color:#61718a}.portal-close{border:0;background:#e9eff6;width:42px;height:42px;border-radius:50%;font-size:24px;cursor:pointer}.portal-actions{display:flex;gap:10px;align-items:center}.user-chip{background:#eaf2ff;padding:9px 12px;border-radius:11px;font-weight:800;font-size:13px}
+.role-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.role-card{border:1px solid #dfe7f1;background:#fff;border-radius:18px;padding:24px;text-align:left;cursor:pointer;transition:.2s}.role-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(7,27,53,.10)}.role-card span{font-size:32px;display:block;margin-bottom:14px}.role-card strong{display:block;font-size:18px}.role-card small{display:block;color:#61718a;margin-top:5px}
+.portal-form{max-width:520px;background:#fff;border:1px solid #e4ebf4;border-radius:20px;padding:26px;display:grid;gap:13px}.portal-form input,.compact-form input,.compact-form select,.compact-form textarea{width:100%;border:1px solid #d7e0eb;border-radius:12px;padding:13px;font:inherit}.demo-box{background:#f0f6ff;border-radius:12px;padding:12px;font-size:12px;color:#405570}
+.dash-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:20px}.stat2{background:#fff;border:1px solid #e4ebf4;border-radius:17px;padding:20px}.stat2 span{font-size:25px}.stat2 strong{display:block;font-size:30px;color:#0b5cff}.stat2 small{color:#61718a}
+.dash-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}.dash-card{background:#fff;border:1px solid #e4ebf4;border-radius:20px;padding:23px;margin-bottom:18px}.dash-card h3{margin-bottom:14px}.list-row{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid #edf1f6}.list-row:last-child{border-bottom:0}.list-row small,.profile-box span,.match-box small{display:block;color:#61718a;font-size:12px;margin-top:3px}.status{font-size:11px;font-weight:900;background:#eaf8f3;color:#087d5a;padding:5px 8px;border-radius:999px;height:max-content}.profile-box{display:grid;gap:7px;background:#f7faff;border-radius:14px;padding:16px;margin-bottom:15px}.mini-actions{display:flex;gap:10px;flex-wrap:wrap}.mini-actions button{border:1px solid #d8e2ef;background:#fff;padding:10px 13px;border-radius:10px;cursor:pointer;font-weight:700}.flow2{background:#f5f9fd;border-radius:13px;padding:16px;line-height:2}.compact-form{display:grid;gap:11px}.pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.pipeline div{background:#f5f9fd;border-radius:12px;padding:12px;text-align:center}.pipeline strong{display:block;font-size:22px;color:#0b5cff}.pipeline b{font-size:11px}.match-box{border:1px solid #e4ebf4;border-radius:13px;padding:12px;margin-bottom:10px}.match-box select{width:100%;margin-top:9px;border:1px solid #d7e0eb;border-radius:9px;padding:9px}.muted{color:#61718a}
+@media(max-width:850px){.role-grid,.dash-grid{grid-template-columns:repeat(2,1fr)}.dash-cols{grid-template-columns:1fr}.pipeline{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){#portal{padding:8px}.portal-window{padding:18px}.role-grid,.dash-grid,.pipeline{grid-template-columns:1fr 1fr}.portal-actions{flex-direction:column;align-items:flex-end}.portal-head{flex-direction:column}.user-chip{display:none}}
+`;
+document.head.appendChild(portalStyle);
+
+document.addEventListener("DOMContentLoaded",()=>{
+ const p=document.createElement("div");p.id="portal";p.innerHTML='<div class="portal-window"><div id="portalBody"></div></div>';document.body.appendChild(p);
+ // Add Login link next to the existing Join PTG navigation.
+ const nav=document.querySelector(".nav-links");
+ if(nav && !document.getElementById("portalNav")){const a=document.createElement("a");a.id="portalNav";a.href="#";a.textContent="Login";a.onclick=e=>{e.preventDefault();showPortal()};nav.appendChild(a)}
+ // Add a portal login button in the hero if useful.
+});
+</script>
+
+
+<script>
+(function(){
+  function updateBenefitLanguage(){
+    const mr = (document.documentElement.lang || "en") === "mr";
+    document.querySelectorAll("[data-benefit-en]").forEach(el=>{
+      el.textContent = mr ? el.getAttribute("data-benefit-mr") : el.getAttribute("data-benefit-en");
+    });
+  }
+  window.updateBenefitLanguage = updateBenefitLanguage;
+  const old = window.setLanguage;
+  if (typeof old === "function") {
+    window.setLanguage = function(lang) {
+      old(lang);
+      updateBenefitLanguage();
+    };
+  }
+  document.addEventListener("DOMContentLoaded", updateBenefitLanguage);
+  new MutationObserver(updateBenefitLanguage).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
+})();
+</script>
+
+
+<script>
+(function(){
+  function syncBenefits(){
+    const isMr = document.documentElement.lang === "mr";
+    document.querySelectorAll("#benefits [data-en][data-mr]").forEach(function(el){
+      el.textContent = isMr ? el.getAttribute("data-mr") : el.getAttribute("data-en");
+    });
+  }
+  window.syncPTGBenefits = syncBenefits;
+  document.addEventListener("DOMContentLoaded", syncBenefits);
+  const obs = new MutationObserver(function(mutations){
+    if(mutations.some(m => m.type === "attributes" && m.attributeName === "lang")) syncBenefits();
+  });
+  obs.observe(document.documentElement, {attributes:true, attributeFilter:["lang"]});
+  setTimeout(syncBenefits, 50);
+})();
+</script>
+
+<script id="ptg-final-language-controller">
+(function () {
+  function applyLanguage(lang) {
+    lang = (lang === "mr") ? "mr" : "en";
+    document.documentElement.setAttribute("lang", lang);
+
+    document.querySelectorAll("[data-en][data-mr]").forEach(function (el) {
+      el.textContent = lang === "mr"
+        ? el.getAttribute("data-mr")
+        : el.getAttribute("data-en");
+    });
+
+    var toggle = document.getElementById("langToggle");
+    if (toggle) toggle.textContent = lang === "mr" ? "🌐 मराठी ▾" : "🌐 English ▾";
+
+    var menu = document.getElementById("langMenu");
+    if (menu) menu.classList.remove("show");
+
+    try { localStorage.setItem("ptgLanguage", lang); } catch (e) {}
+
+    // Re-render the industry area if the existing prototype provides render().
+    if (typeof window.render === "function") {
+      try { window.render(); } catch (e) {}
+    }
+
+    // Keep the Benefits section authoritative after any re-render.
+    document.querySelectorAll("#benefits [data-en][data-mr]").forEach(function (el) {
+      el.textContent = lang === "mr"
+        ? el.getAttribute("data-mr")
+        : el.getAttribute("data-en");
+    });
+  }
+
+  window.setLanguage = applyLanguage;
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var saved = "en";
+    try { saved = localStorage.getItem("ptgLanguage") || "en"; } catch (e) {}
+    applyLanguage(saved);
+
+    var toggle = document.getElementById("langToggle");
+    if (toggle && !toggle.dataset.ptgBound) {
+      toggle.dataset.ptgBound = "1";
+      toggle.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var menu = document.getElementById("langMenu");
+        if (menu) menu.classList.toggle("show");
+      };
+    }
+
+    document.querySelectorAll("#langMenu button").forEach(function (btn) {
+      btn.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var text = (btn.textContent || "").toLowerCase();
+        applyLanguage(text.indexOf("मराठी") >= 0 ? "mr" : "en");
+      };
+    });
+
+    document.addEventListener("click", function (e) {
+      var sw = document.querySelector(".lang-switch");
+      var menu = document.getElementById("langMenu");
+      if (sw && menu && !sw.contains(e.target)) menu.classList.remove("show");
+    });
+  });
+})();
+</script>
+
+<script id="ptg-category-language-fix">
+(function(){
+  function syncCategoryUI(){
+    const mr=document.documentElement.lang==="mr";
+    const search=document.getElementById("search"), filter=document.getElementById("filter"), formCat=document.getElementById("formCat");
+    if(search) search.placeholder=mr?"industry किंवा business type शोधा...":"Search industry or business type...";
+    if(filter){
+      filter.options[0].textContent=mr?"सर्व उद्योग":"All Industries";
+      for(let i=1;i<filter.options.length;i++){
+        const x=industries.find(v=>v.id===filter.options[i].value);
+        if(x) filter.options[i].textContent=mr?x.mr+" / "+x.name:x.name+" / "+x.mr;
+      }
+    }
+    if(formCat){
+      formCat.options[0].textContent=mr?"Business Category निवडा":"Select Business Category";
+      for(let i=1;i<formCat.options.length;i++){
+        const x=industries.find(v=>v.id===formCat.options[i].value);
+        if(x) formCat.options[i].textContent=mr?x.mr+" / "+x.name:x.name+" / "+x.mr;
+      }
+    }
+    if(typeof window.render==="function") window.render();
+  }
+  window.syncPTGCategoryUI=syncCategoryUI;
+  document.addEventListener("DOMContentLoaded",syncCategoryUI);
+  new MutationObserver(function(ms){
+    if(ms.some(m=>m.type==="attributes"&&m.attributeName==="lang")) syncCategoryUI();
+  }).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
+})();
+</script>
+
+
+<script id="ptg-global-bilingual-controller">
+(function(){
+  function applyPTGLanguage(lang){
+    lang = lang === "mr" ? "mr" : "en";
+    document.documentElement.setAttribute("lang", lang);
+
+    document.querySelectorAll("[data-en][data-mr]").forEach(function(el){
+      el.textContent = lang === "mr"
+        ? el.getAttribute("data-mr")
+        : el.getAttribute("data-en");
+    });
+
+    var toggle = document.getElementById("langToggle");
+    if(toggle) toggle.textContent = lang === "mr" ? "🌐 मराठी ▾" : "🌐 English ▾";
+
+    try { localStorage.setItem("ptgLanguage", lang); } catch(e) {}
+
+    if(typeof window.render === "function"){
+      try { window.render(); } catch(e) {}
+    }
+  }
+
+  window.setLanguage = applyPTGLanguage;
+
+  document.addEventListener("DOMContentLoaded", function(){
+    var lang = "en";
+    try { lang = localStorage.getItem("ptgLanguage") || "en"; } catch(e) {}
+    applyPTGLanguage(lang);
+
+    document.querySelectorAll("#langMenu button").forEach(function(btn){
+      btn.onclick = function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        var t = (btn.textContent || "").toLowerCase();
+        applyPTGLanguage(t.indexOf("मराठी") !== -1 ? "mr" : "en");
+        var menu=document.getElementById("langMenu");
+        if(menu) menu.classList.remove("show");
+      };
+    });
+  });
+})();
+</script>
+
+
+<script id="ptg-about-final-language-sync">
+(function(){
+  function syncAbout(){
+    var mr=document.documentElement.lang==="mr";
+    document.querySelectorAll("#about [data-en][data-mr]").forEach(function(el){
+      el.textContent=mr?el.getAttribute("data-mr"):el.getAttribute("data-en");
+    });
+  }
+  document.addEventListener("DOMContentLoaded",syncAbout);
+  new MutationObserver(function(ms){
+    if(ms.some(function(m){return m.type==="attributes"&&m.attributeName==="lang";})) syncAbout();
+  }).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
+})();
+</script>
+
+</body>
+</html>
